@@ -285,6 +285,9 @@ function addAnimationStyles() {
     .foto {
       animation: float 3s ease-in-out infinite;
     }
+    .contacto h2{
+     animation: float 3s ease-in-out infinite;
+    }
   `;
   document.head.appendChild(style);
 }
@@ -336,4 +339,5 @@ window.addEventListener('load', function() {
     document.body.style.transition = 'opacity 0.6s ease';
     document.body.style.opacity = '1';
   }, 50);
+
 });
