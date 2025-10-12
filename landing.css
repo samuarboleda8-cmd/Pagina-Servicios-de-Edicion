@@ -741,7 +741,6 @@ body {
   font-weight: 600;
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
-
 .contacto::before {
   content: '';
   position: absolute;
@@ -928,7 +927,17 @@ footer::before {
   .demo-reel h2:first-of-type {
     font-size: 2.2rem;
   }
+  .sobre-mi,
+  .mis-servicios,
+  .contacto {
+  opacity: 1 ;
+  transform: translateY(0);
+}
 
+.mis-servicios > div {
+  opacity: 1 ;
+  transform: scale(1) ;
+}
   .demo-reel > p {
     font-size: 1.1rem;
   }
@@ -969,5 +978,4 @@ footer::before {
   .demo-reel > p {
     font-size: 1rem;
   }
-
 }
