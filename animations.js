@@ -110,7 +110,7 @@ function animateCTAButton() {
   ctaButtons.forEach(button => {
     // Efecto de pulso cada 4 segundos
     setInterval(() => {
-      button.style.animation = 'pulse 1s ease';
+      button.style.animation = 'pulse 0.8s ease';
       setTimeout(() => {
         button.style.animation = '';
       }, 800);
@@ -168,10 +168,13 @@ function animateProjectCards() {
 // Observer para animaciones al hacer scroll con threshold mayor
 function setupScrollAnimations() {
   if ('IntersectionObserver' in window) {
+    // Detectar si es móvil
+    const isMobile = window.innerWidth <= 768;
+    
     const observerOptions = {
       root: null,
-      rootMargin: '-100px', // Solo activar cuando esté 100px dentro del viewport
-      threshold: 0.3 // Necesita estar 30% visible
+      rootMargin: isMobile ? '0px' : '-100px', // Sin margen en móvil
+      threshold: isMobile ? 0.1 : 0.3 // Threshold más bajo en móvil
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -185,7 +188,7 @@ function setupScrollAnimations() {
             cards.forEach((card, index) => {
               setTimeout(() => {
                 card.style.animation = `slideInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
-              }, index * 300); // 300ms entre cada card
+              }, index * (isMobile ? 150 : 300)); // Más rápido en móvil
             });
           }
         }
@@ -285,9 +288,9 @@ function addAnimationStyles() {
     .foto {
       animation: float 3s ease-in-out infinite;
     }
-    .contacto h2{
-     animation: float 3s ease-in-out infinite;
-    }
+     .contacto h2{
+    animation: float 3s ease-in-out infinite;
+     } 
   `;
   document.head.appendChild(style);
 }
@@ -339,5 +342,5 @@ window.addEventListener('load', function() {
     document.body.style.transition = 'opacity 0.6s ease';
     document.body.style.opacity = '1';
   }, 50);
-
 });
+
