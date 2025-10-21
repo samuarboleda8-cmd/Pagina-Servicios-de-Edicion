@@ -11,7 +11,9 @@
   --text-light: #E8F1F2;
   --bg-secondary: #F5F8FA;
   --neutral: #AAB7C4;
+    --light-blue: #00c6ff;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -22,6 +24,7 @@ body {
   background-color: var(--bg-secondary);
   color: var(--dark-blue);
   overflow-x: hidden;
+   
 }
 
 /* Sección Demo Reel - Hero con efectos sutiles */
@@ -75,6 +78,7 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   bottom: -300px;
   left: -200px;
   animation: floatBlob 20s ease-in-out infinite;
+  
 }
 
 @keyframes floatBlob {
@@ -89,6 +93,16 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
 .demo-reel > * {
   position: relative;
   z-index: 1;
+}
+
+/* Texto resaltado tipo azul sólido */
+.highlight {
+    background: #00aaff;
+  color: white;
+  padding: 0.0em 0.6em;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap; 
 }
 
 .demo-reel h2:first-of-type {
@@ -112,16 +126,6 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
     transform: translateY(0);
   }
 }
-.highlight {
-    background: #00aaff;
-  color: white;
-  padding: 0.0em 0.6em;
-  border-radius: 100px;
-  font-weight: 600;
-  white-space: nowrap; 
-}
-
-
 
 .demo-reel > p {
   font-size: 1.3rem;
@@ -138,7 +142,6 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
                0 0 40px #ffffff,
                0 0 50px #ffffff;
 }
-
 
 .demo-reel h2:nth-of-type(2) {
   font-size: 2rem;
@@ -253,22 +256,18 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
 }
 
 /* Sección Mis Proyectos con efectos modernos */
-.mis-servicios {
+.mis-proyectos {
   width: 100%;
-  min-height: 80vh;
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #f5f9ff 0%, #e8f0ff 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3.5rem;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+  min-height: 70vh;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, #e6eff5 100%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 1900px;
+  margin: 0 auto;
   position: relative;
 }
-
-
 .mis-proyectos::before {
   content: '';
   position: absolute;
@@ -443,7 +442,6 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   overflow: hidden;
 }
 
-
 .sobre-mi::before {
   content: '';
   position: absolute;
@@ -544,8 +542,8 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
 }
 
 .foto img {
-  width: 210px;
-  height: 210px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
   position: relative;
@@ -568,11 +566,12 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   margin-bottom: 3rem;
   opacity: 0.95;
   font-weight: 300;
-     color: #ffffff;
+   color: #ffffff;
   text-shadow: 0 0 30px #ffffff,
                0 0 30px #ffffff,
                0 0 50px #ffffff;
 }
+
 .sobre-mi h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
@@ -626,12 +625,13 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   width: 100%;
   min-height: 80vh;
   padding: 6rem 2rem;
-  background: linear-gradient(180deg, #e6eff5 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(180deg, #f5f9ff 0%, #e8f0ff 100%);
   display: flex;
-  flex-direction: column;
+ flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 3.5rem;
+
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
@@ -655,7 +655,6 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   transform: translateY(0);
 }
 
-/* Título de Mis Servicios */
 .mis-servicios h2 {
   font-size: 3.5rem;
   color: var(--dark-blue);
@@ -678,16 +677,6 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   background: linear-gradient(90deg, var(--button-blue), var(--primary-blue));
   border-radius: 2px;
   box-shadow: 0 0 10px rgba(0, 168, 232, 0.5);
-}
-
-/* Contenedor de las cards */
-.servicios-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3.5rem;
-  flex-wrap: wrap;
-  width: 100%;
 }
 
 .mis-servicios > div {
@@ -786,7 +775,10 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
 .contacto {
   width: 100%;
   min-height: 60vh;
-  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+   background: 
+      radial-gradient(circle at 30% 30%, var(--dark-blue), transparent 60%),
+radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--dark-blue));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -980,6 +972,7 @@ footer::before {
   box-shadow: 0 0 15px rgba(0, 168, 232, 0.6);
 }
 
+
 /* Responsive */
 @media (max-width: 1400px) {
   .mis-proyectos {
@@ -1043,11 +1036,3 @@ footer::before {
     font-size: 1rem;
   }
 }
-
-
-
-
-
-
-
-
