@@ -94,7 +94,10 @@ body {
   max-width: 1000px;
   line-height: 1.2;
   letter-spacing: -0.5px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+  text-shadow: 0 0 40px #ffffff,
+               0 0 40px #ffffff,
+               0 0 50px #ffffff;
   animation: fadeInDown 1s ease-out;
 }
 
@@ -1031,6 +1034,7 @@ footer::before {
     font-size: 1rem;
   }
 }
+
 
 
 
