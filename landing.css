@@ -108,6 +108,16 @@ body {
     transform: translateY(0);
   }
 }
+.highlight {
+    background: #00aaff;
+  color: white;
+  padding: 0.0em 0.6em;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap; 
+}
+
+
 
 .demo-reel > p {
   font-size: 1.3rem;
@@ -118,8 +128,13 @@ body {
   overflow: visible;
   line-height: 1.7;
   font-weight: 300;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+ 
+  color: #ffffff;
+  text-shadow: 0 0 40px #ffffff,
+               0 0 40px #ffffff,
+               0 0 50px #ffffff;
 }
+
 
 .demo-reel h2:nth-of-type(2) {
   font-size: 2rem;
@@ -541,9 +556,11 @@ body {
   margin-bottom: 3rem;
   opacity: 0.95;
   font-weight: 300;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+     color: #ffffff;
+  text-shadow: 0 0 30px #ffffff,
+               0 0 30px #ffffff,
+               0 0 50px #ffffff;
 }
-
 .sobre-mi h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
@@ -770,7 +787,13 @@ body {
   position: relative;
   overflow: hidden;
 }
-
+.contacto h2{
+  color: white;
+   font-size: 3.3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
 .contacto::before {
   content: '';
   position: absolute;
@@ -1008,6 +1031,7 @@ footer::before {
     font-size: 1rem;
   }
 }
+
 
 
 
