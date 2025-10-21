@@ -27,9 +27,15 @@ body {
 /* Sección Demo Reel - Hero con efectos sutiles */
 .demo-reel {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+  
   display: flex;
+  background: 
+      radial-gradient(circle at 30% 30%, var(--dark-blue), transparent 60%),
+       radial-gradient(circle at 80% 20%, var(--button-blue), transparent 70%),
+radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--dark-blue));
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
@@ -94,10 +100,6 @@ body {
   max-width: 1000px;
   line-height: 1.2;
   letter-spacing: -0.5px;
-    color: #ffffff;
-  text-shadow: 0 0 40px #ffffff,
-               0 0 40px #ffffff,
-               0 0 50px #ffffff;
   animation: fadeInDown 1s ease-out;
 }
 
@@ -252,18 +254,21 @@ body {
 }
 
 /* Sección Mis Proyectos con efectos modernos */
-.mis-proyectos {
+.mis-servicios {
   width: 100%;
-  min-height: 70vh;
-  padding: 5rem 2rem;
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, #e6eff5 100%);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  max-width: 1900px;
-  margin: 0 auto;
+  min-height: 80vh;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #f5f9ff 0%, #e8f0ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
   position: relative;
 }
+
 
 .mis-proyectos::before {
   content: '';
@@ -1034,6 +1039,7 @@ footer::before {
     font-size: 1rem;
   }
 }
+
 
 
 
