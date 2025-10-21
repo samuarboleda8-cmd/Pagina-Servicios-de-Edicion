@@ -51,8 +51,7 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(0, 168, 232, 0.2) 0%, transparent 60%),
-              radial-gradient(circle at 70% 80%, rgba(0, 168, 232, 0.15) 0%, transparent 50%);
+ 
   pointer-events: none;
   animation: gradientShift 15s ease-in-out infinite;
 }
@@ -425,7 +424,11 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
 .sobre-mi {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    background: 
+    /* Fugas de luz claras */
+    radial-gradient(circle at 30% 30%, var(--dark-blue), transparent 60%),
+radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
+              radial-gradient(circle at 70% 70%, var(--dark-blue));
   padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
@@ -439,6 +442,7 @@ radial-gradient(circle at 20% 60%, var(--light-blue), transparent 70%),
   position: relative;
   overflow: hidden;
 }
+
 
 .sobre-mi::before {
   content: '';
@@ -1039,6 +1043,7 @@ footer::before {
     font-size: 1rem;
   }
 }
+
 
 
 
