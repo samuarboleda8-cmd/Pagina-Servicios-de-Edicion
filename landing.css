@@ -702,25 +702,46 @@
       margin-top: .5rem;
     }
  
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-      .sobre-inner { grid-template-columns: 1fr; }
-      .sobre-img-wrap img { aspect-ratio: 1/1; max-width: 260px; margin: 0 auto; }
-      .sobre-content { text-align: center; }
-      .sobre-vision { justify-content: center; }
-    }
- 
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .proyectos-grid { grid-template-columns: 1fr; }
-      .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-title { letter-spacing: -1px; }
-      footer { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-    }
- 
-    @media (max-width: 400px) {
-      .servicios-grid { grid-template-columns: 1fr; }
-    }
+     /* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+  .sobre-inner { grid-template-columns: 1fr; }
+  .sobre-img-wrap img { aspect-ratio: 1/1; max-width: 260px; margin: 0 auto; }
+  .sobre-content { text-align: center; }
+  .sobre-vision { justify-content: center; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  
+  /* CAMBIO CLAVE: 2 columnas en móvil para que los videos verticales no queden gigantes */
+  .proyectos-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px; /* Espacio reducido entre videos */
+  }
+
+  /* Control de altura para los videos/contenedores dentro de los proyectos */
+  .proyectos-grid iframe,
+  .proyectos-grid video,
+  .proyectos-grid .proyecto-card { 
+    max-height: 380px; 
+    object-fit: cover;
+  }
+
+  .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-title { letter-spacing: -1px; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+}
+
+@media (max-width: 400px) {
+  .servicios-grid { grid-template-columns: 1fr; }
+  
+  /* Ajuste opcional para pantallas extremadamente pequeñas */
+  .proyectos-grid iframe,
+  .proyectos-grid video,
+  .proyectos-grid .proyecto-card {
+    max-height: 300px;
+  }
+}
