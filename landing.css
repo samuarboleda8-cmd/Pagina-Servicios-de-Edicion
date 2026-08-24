@@ -702,7 +702,7 @@
       margin-top: .5rem;
     }
  
-     /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .servicios-grid { grid-template-columns: repeat(2, 1fr); }
   .sobre-inner { grid-template-columns: 1fr; }
@@ -715,13 +715,20 @@
   .nav-links { display: none; }
   .hamburger { display: flex; }
   
-  /* CAMBIO CLAVE: 2 columnas en móvil para que los videos verticales no queden gigantes */
-  .proyectos-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 12px; /* Espacio reducido entre videos */
+  /* Ajuste de título hero (SAMUEL MACHADO) */
+  .hero-title { 
+    font-size: clamp(2rem, 9vw, 3rem);
+    letter-spacing: -1px; 
+    word-break: keep-all;
   }
 
-  /* Control de altura para los videos/contenedores dentro de los proyectos */
+  /* Cuadrícula de proyectos a 2 columnas */
+  .proyectos-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+
+  /* Control de altura para videos verticales */
   .proyectos-grid iframe,
   .proyectos-grid video,
   .proyectos-grid .proyecto-card { 
@@ -729,8 +736,46 @@
     object-fit: cover;
   }
 
+  /* El último video (horizontal) abarca 2 columnas */
+  .proyectos-grid > *:last-child {
+    grid-column: span 2;
+    max-height: none;
+  }
+
+  .proyectos-grid > *:last-child iframe,
+  .proyectos-grid > *:last-child video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ajuste de la sección 'Trabajemos juntos' */
+  .contacto-title, 
+  .contacto h2 { 
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    word-break: keep-all;
+    padding: 0 10px;
+  }
+
+  /* Botones de contacto ordenados en 1 sola columna vertical */
+  .contacto-buttons,
+  .contacto-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .contacto-buttons a,
+  .contacto-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
   .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-title { letter-spacing: -1px; }
   footer { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
 }
@@ -738,7 +783,10 @@
 @media (max-width: 400px) {
   .servicios-grid { grid-template-columns: 1fr; }
   
-  /* Ajuste opcional para pantallas extremadamente pequeñas */
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
   .proyectos-grid iframe,
   .proyectos-grid video,
   .proyectos-grid .proyecto-card {
